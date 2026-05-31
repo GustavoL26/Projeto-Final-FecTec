@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: url(/IMG/Fundo\ de\ Imagem.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.cabecalho{
+    text-align: center;
+    border-bottom: 4px solid green;
+    padding: 25px 0;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logo_escola{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nome_escola{
+    color: green;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titulo{
+    color: rgb(75, 177, 75);
+}
+
+#titulo_cadastro{
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    gap: 15px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+select{
+    background-color: white !important;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    cursor: pointer;
+}
+
+select option{
+    background-color: white !important;
+}
+
+select option:disabled{
+    background-color: white !important;
+    color: gray !important;
+}
+
+input{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white !important;
+}
+
+button{
+    width: 60%;
+    box-sizing: border-box;
+    align-self: center;
+    border-radius: 8px;
+    background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+button:active{
+    cursor: wait;
+}
+
+.conta_existente{
+    align-self: center;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.conta_existente a:active{
+    cursor: wait;
+}
+
+.acesso_extra{
+    position: absolute;
+    bottom: 50px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+}
+
+.item_nivel{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.texto_nivel{
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    user-select: none;
+}
+
+.link_acesso{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link_acesso:active{
+    cursor: wait;
+}
+
+.icone_opcao{
+    width: 22px;
+    height: 22px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.professor_cor{
+    background-color: red;
+    transform: rotate(45deg);
+}
+
+.adm_cor{
+    background-color: orange;
+    transform: rotate(45deg);
+}
+
+.link_acesso:hover .icone_opcao{
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.link_acesso .adm_cor{
+    transform: rotate(45deg) scale(1.1);
+}
