@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+    <link rel="stylesheet" href="CSS/cadastro_alunos.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
+
+        <h1 class="nome_escola">EEEP Maria Carmem Vieira Moreira</h1>
+
+        <h2 class="titulo">Escola Ativa</h2>
+    </header>
+
+    <h2 id="titulo_cadastro">Cadastre-se</h2>
+
+    <form id="cadastro">
+        <select id="serie">
+            <option value="" disabled selected>Série</option>
+            <option>1º Série</option>
+            <option>2º Série</option>
+            <option>3º Série</option>
+        </select>
+
+        <select id="turma">
+            <option value="" disabled selected>Turma</option>
+            <option>A (Desenvolvimento de Sistemas)</option>
+            <option>B (Química)</option>
+            <option>C (Secretariado/Logística)</option>
+            <option>D (Têxtil)</option>
+        </select>
+
+        <input type="text" placeholder="Nome Completo" id="nome" autocomplete="off">
+
+        <input type="password" placeholder="Senha" id="senha" autocomplete="off">
+
+        <button>Criar</button>
+
+        <p class="conta_existente">Possui uma conta?</p>
+
+        <a href="acesso_alunos.html" class="conta_existente">
+            <p>Entrar aqui!</p>
+        </a>
+    </form>
+
+    <footer class="acesso_extra">
+        <div class="item_nivel">
+            <p class="texto_nivel">Sou professor</p>
+
+            <a href="acesso_professor.html" class="link_acesso">
+                <div class="icone_opcao professor_cor"></div>
+            </a>
+        </div>
+
+        <div class="item_nivel">
+            <p class="texto_nivel">Sou administrador</p>
+
+            <a href="acesso_administrador.html" class="link_acesso">
+                <div class="icone_opcao adm_cor"></div>
+            </a>
+        </div>
+    </footer>
+
+    <script src="JS/cadastro_alunos.js"></script>
+</body>
+</html>
