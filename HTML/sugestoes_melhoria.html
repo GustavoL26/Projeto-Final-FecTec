@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestões de Melhorias</title>
+    <link rel="stylesheet" href="CSS/sugestoes_melhoria.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
+
+        <h1 class="nome_escola">EEEP Maria Carmem Vieira Moreira</h1>
+
+        <h2 class="titulo">Escola Ativa</h2>
+    </header>
+
+    <a href="principal.html" class="btn_voltar">
+        <span class="seta_voltar">◀</span>
+        <span class="texto_voltar">Voltar</span>
+    </a>
+
+    <div id="sugestoes_melhoria">
+        <h2 id="titulo_sugestoes_melhoria">Sugestão de Melhoria</h2>
+
+        <select id="menu_tipo">
+            <option value="" disabled selected>Menu/Tipo</option>
+            <option>Sugestões de Projeto</option>
+            <option>Sugestões de Melhoria</option>
+            <option>Reclamações</option>
+        </select>
+    </div>
+
+    <p class="apoie_propostas">Apoie propostas ou não</p>
+
+    <section class="secao_votacao">
+        <header class="votacao">
+            <h3 class="titulo_votacao">Votação</h3>
+        </header>
+
+        <div class="cards_melhorias">
+            <div id="cards_votacao">
+                <div class="card_melhoria"></div>
+                <div class="card_melhoria"></div>
+                <div class="card_melhoria"></div>
+                <div class="card_melhoria"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/sugestoes_melhoria.js"></script>
+</body>
+</html>
