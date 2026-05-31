@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="CSS/principal.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
+
+        <h1 class="nome_escola">EEEP Maria Carmem Vieira Moreira</h1>
+
+        <h2 class="titulo">Escola Ativa</h2>
+    </header>
+
+    <div id="principal">
+        <h2 id="titulo_proposta">Bem-vindo(a), "Usuário"!</h2>
+
+        <p id="itens_proposta">
+            <button>Sugestões</button>
+            <button>Reclamações</button>
+        </p>
+    </div>
+
+    <div id="cards_dinamicos">
+        <div id="card_sugestao" class="card_formulario">
+            <label for="tipo_sugestao">Tipo</label>
+
+            <select id="tipo_sugestao">
+                <option value="" disabled selected>Projeto ou melhoria</option>
+                <option>Sugestão de projeto</option>
+                <option>Sugestão de melhoria</option>
+            </select>
+
+            <label for="desc_sugestao">Descrição da sugestão</label>
+            <textarea id="desc_sugestao" rows="5" placeholder="Escreva ou descreva"></textarea>
+
+            <button class="btn_envio">Enviar sugestão</button>
+        </div>
+
+        <div id="card_reclamacao" class="card_formulario">
+            <label for="local_reclamacao">Local</label>
+
+            <select id="local_reclamacao">
+                <option value="" disabled selected>Salas de aula, banheiros...</option>
+                <option>Salas de aula</option>
+                <option>Banheiros</option>
+                <option>Refeitório</option>
+                <option>Quadra</option>
+                <option>Laboratórios</option>
+                <option>Auditório</option>
+                <option>Biblioteca</option>
+                <option>Pátio</option>
+            </select>
+
+            <label for="freq_reclamacao">Frequência</label>
+
+            <select id="freq_reclamacao">
+                <option value="" disabled selected>Uma vez, algumas vezes...</option>
+                <option>Uma vez</option>
+                <option>Algumas vezes</option>
+                <option>Muitas vezes</option>
+                <option>Sempre</option>
+            </select>
+
+            <label for="desc_reclamacao">Descrição da reclamação</label>
+
+            <textarea id="desc_reclamacao" rows="5" placeholder="Escreva ou descreva"></textarea>
+
+            <button class="btn_envio">Enviar reclamação</button>
+        </div>
+    </div>
+
+    <section id="secao_principal">
+        <section id="sugestoes_projetos">
+            <header id="cabecalho_projetos">
+                <h3>Sugestões de Projetos</h3>
+            </header>
+
+            <div class="cards_projetos">
+                <a href="sugestoes_projeto.html" class="card_clicavel">
+                    <div class="card_projetos"></div>
+                    <div class="card_projetos"></div>
+                    <div class="card_projetos"></div>
+                    <div class="card_projetos"></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="reclamacoes">
+            <header id="cabecalho_reclamacoes">
+                <h3>Reclamações</h3>
+            </header>
+
+            <div class="cards_reclamacoes">
+                <a href="reclamacoes.html" class="card_clicavel">
+                    <div class="card_reclamacoes"></div>
+                    <div class="card_reclamacoes"></div>
+                    <div class="card_reclamacoes"></div>
+                    <div class="card_reclamacoes"></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="sugestoes_melhorias">
+            <header id="cabecalho_melhorias">
+                <h3>Sugestões de Melhorias</h3>
+            </header>
+
+            <div class="cards_melhorias">
+                <a href="sugestoes_melhoria.html" class="card_clicavel">
+                    <div class="card_melhorias"></div>
+                    <div class="card_melhorias"></div>
+                    <div class="card_melhorias"></div>
+                    <div class="card_melhorias"></div>
+                </a>
+            </div>
+        </section>
+    </section>
+
+    <script src="JS/principal.js"></script>
+</body>
+</html>
