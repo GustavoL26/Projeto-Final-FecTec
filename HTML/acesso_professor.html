@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessar conta como professor</title>
+    <link rel="stylesheet" href="CSS/acesso_professor.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
+
+        <h1 class="nome_escola">EEEP Maria Carmem Vieira Moreira</h1>
+
+        <h2 class="titulo">Escola Ativa</h2>
+    </header>
+
+    <h2 id="titulo_acesso_professor">Entrar como professor</h2>
+
+    <form id="acesso_professor">
+        <input type="text" placeholder="Nome Completo" id="nome">
+
+        <input type="password" placeholder="Senha Especial" id="senha_especial">
+        
+        <button>Entrar</button>
+    </form>
+
+    <footer class="acesso_extra">
+        <div class="item_nivel">
+            <p class="texto_nivel">Sou aluno</p>
+
+            <a href="acesso_alunos.html" class="link_acesso">
+                <div class="icone_opcao aluno_cor"></div>
+            </a>
+        </div>
+
+        <div class="item_nivel">
+            <p class="texto_nivel">Sou administrador</p>
+
+            <a href="acesso_administrador.html" class="link_acesso">
+                <div class="icone_opcao adm_cor"></div>
+            </a>
+        </div>
+    </footer>
+
+    <script src="JS/acesso_professor.js"></script>
+</body>
+</html>
