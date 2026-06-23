@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Professores</title>
+    <link rel="stylesheet" href="CSS/cadastro_professor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
+
+        <h1 class="nome_escola">E.E.E.P. Maria Carmem Vieira Moreira</h1>
+
+        <h2 class="titulo">Escola Ativa</h2>
+    </header>
+
+    <h2 id="titulo_cadastro">Cadastro do Professor</h2>
+
+    <p id="subtitulo_cadastro">
+        Informe seus dados institucionais para acessar a plataforma.
+    </p>
+
+    <form id="cadastro">
+        <input type="text" placeholder="Nome Completo" id="nome" autocomplete="off">
+
+        <select id="disciplina">
+            <option value="" disabled selected>Disciplina</option>
+            <option value="Base Comum">Disciplinas Gerais (Português, Matemática...)</option>
+            <option value="Técnico em D.S.">Área Técnica - Desenvolvimento de sistemas</option>
+            <option value="Técnico em Química">Área Técnica - Química</option>
+            <option value="Técnico em Secretariado/Logística">Área Técnica - Secretariado/Logística</option>
+            <option value="Técnico em Têxtil">Área Técnica - Têxtil</option>
+        </select>
+
+        <div class="campo_senha">
+            <input type="password" placeholder="Senha" id="senha" autocomplete="off">
+            <button type="button" id="btn_mostrar_senha"><i class="fa-solid fa-eye"></i></button>
+        </div>
+
+        <button type="submit" id="btn_criar">Criar</button>
+
+        <p class="conta_existente">Possui uma conta?</p>
+
+        <a href="acesso_professor.html" class="conta_existente">
+            <p>Entrar aqui!</p>
+        </a>
+    </form>
+
+    <footer class="acesso_extra">
+        <div class="item_nivel">
+            <p class="texto_nivel">Cadastrar-se como aluno</p>
+
+            <a href="cadastro_alunos.html" class="link_acesso">
+                <div class="icone_opcao aluno_cor"></div>
+            </a>
+        </div>
+
+        <div class="item_nivel">
+            <p class="texto_nivel">Sou administrador</p>
+
+            <a href="acesso_administrador.html" class="link_acesso">
+                <div class="icone_opcao adm_cor"></div>
+            </a>
+        </div>
+    </footer>
+
+    <script src="JS/cadastro_professor.js"></script>
+</body>
+</html>
