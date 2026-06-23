@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Alunos</title>
     <link rel="stylesheet" href="CSS/cadastro_alunos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header class="cabecalho">
         <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
 
-        <h1 class="nome_escola">EEEP Maria Carmem Vieira Moreira</h1>
+        <h1 class="nome_escola">E.E.E.P. Maria Carmem Vieira Moreira</h1>
 
         <h2 class="titulo">Escola Ativa</h2>
     </header>
 
-    <h2 id="titulo_cadastro">Cadastre-se</h2>
+    <h2 id="titulo_cadastro">Cadastro do Aluno</h2>
+
+    <p id="subtitulo_cadastro">
+        Participe da Escola Ativa enviando sugestões e acompanhando melhorias.
+    </p>
 
     <form id="cadastro">
         <select id="serie">
@@ -35,9 +40,12 @@
 
         <input type="text" placeholder="Nome Completo" id="nome" autocomplete="off">
 
-        <input type="password" placeholder="Senha" id="senha" autocomplete="off">
+        <div class="campo_senha">
+            <input type="password" placeholder="Senha" id="senha" autocomplete="off">
+            <button type="button" id="btn_mostrar_senha"><i class="fa-solid fa-eye"></i></button>
+        </div>
 
-        <button>Criar</button>
+        <button type="submit" id="btn_criar">Criar</button>
 
         <p class="conta_existente">Possui uma conta?</p>
 
@@ -48,9 +56,9 @@
 
     <footer class="acesso_extra">
         <div class="item_nivel">
-            <p class="texto_nivel">Sou professor</p>
+            <p class="texto_nivel">Cadastrar-se como professor</p>
 
-            <a href="acesso_professor.html" class="link_acesso">
+            <a href="cadastro_professor.html" class="link_acesso">
                 <div class="icone_opcao professor_cor"></div>
             </a>
         </div>
