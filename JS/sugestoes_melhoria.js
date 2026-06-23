@@ -30,8 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sug = dados_filtrados[i];
 
                 if (sug){
-                    const sug_id = sug.id || `sug_melh_${i}`;
-                    const dados_voto = votos_salvos[sug_id] || {sim: 0, nao: 0, votoUsuario: null};
+                    const sug_id = sug.id;
+                    const dados_voto = votos_salvos[sug_id] || {sim: 0, nao: 0, usuarios: {}};
+
+                    const voto_usuario_atual = dados_voto.usuarios?.[usuario_atual_id] || null;
 
                     const votou_sim = dados_voto.votoUsuario === 'sim';
                     const votou_nao = dados_voto.votoUsuario === 'nao';
@@ -42,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const texto_remover = (votou_sim || votou_nao) 
                         ? `<p class="texto_remover_voto" data-id="${sug_id}">Remover voto</p>` 
                         : `<p class="texto_remover_voto oculto" data-id="${sug_id}">Remover voto</p>`;
-
-                    console.log('Sugestão:', sug.criador_id, sug.tipo_usuario);
 
                     const dono = String(sug.criador_id) === String(usuario_atual_id) && String(sug.tipo_usuario) === String(tipo_usuario_atual);
                     const icone_lixeira = dono 
@@ -135,21 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tipo_voto = botao.getAttribute('data-tipo');
 
                 if (!votos_atuais[id]){
-                    votos_atuais[id] = {sim: 0, nao: 0, votoUsuario: null};
+                    votos_atuais[id] = {sim: 0, nao: 0, usuarios: {}};
                 }
 
                 const item = votos_atuais[id];
 
-                if (item.votoUsuario === tipo_voto){
+                if (!item.usuarios){
+                    item.usuarios = {};
+                }
+
+                const voto_anterior = item.usuarios[usuario_atual_id];
+
+                if (voto_anterior === tipo_voto){
                     item[tipo_voto] = Math.max(0, item[tipo_voto] - 1);
-                    item.votoUsuario = null;
+                    
+                    delete item.usuarios[usuario_atual_id];
                 } else{
-                    if (item.votoUsuario !== null){
-                        item[item.votoUsuario] = Math.max(0, item[item.votoUsuario] - 1);
+                    if (voto_anterior){
+                        item[voto_anterior] = Math.max(0, item[voto_anterior] - 1);
                     }
 
                     item[tipo_voto] += 1;
-                    item.votoUsuario = tipo_voto;
+
+                    item.usuarios[usuario_atual_id] = tipo_voto;
                 }
 
                 localStorage.setItem('votos_escola', JSON.stringify(votos_atuais));
@@ -159,10 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (texto_remocao){
                 const id = texto_remocao.getAttribute('data-id');
 
-                if (votos_atuais[id] && votos_atuais[id].votoUsuario !== null){
-                    const tipo_anterior = votos_atuais[id].votoUsuario;
+                if (votos_atuais[id] && votos_atuais[id].usuarios?.[usuario_atual_id]){
+                    const tipo_anterior = votos_atuais[id].usuarios[usuario_atual_id];
+
                     votos_atuais[id][tipo_anterior] = Math.max(0, votos_atuais[id][tipo_anterior] - 1);
-                    votos_atuais[id].votoUsuario = null;
+
+                    delete votos_atuais[id].usuarios[usuario_atual_id];
 
                     localStorage.setItem('votos_escola', JSON.stringify(votos_atuais));
                     await carregar_sugestoesVotacao();
