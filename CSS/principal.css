@@ -12,15 +12,16 @@ body{
 
 .cabecalho{
     text-align: center;
-    border-bottom: 4px solid green;
+    border-bottom: 6px solid #FFBA00;
     padding: 25px 0;
     position: relative;
-    min-height: 120px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    background: #005F27;
 }
 
 .logo_escola{
@@ -37,12 +38,38 @@ body{
 }
 
 .nome_escola{
-    color: green;
+    color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .titulo{
-    color: rgb(75, 177, 75);
+    color: white;
+}
+
+#btn_sair{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: gray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px 0 10px 20px;
+}
+
+#seta_sair{
+    font-size: 50px;
+    color: gray;
+    line-height: 1;
+}
+
+#texto_sair{
+    font-size: 14px;
+    font-weight: bold;
 }
 
 #principal{
@@ -228,7 +255,7 @@ button:active{
     padding: 25px;
     width: 45%;
     max-width: 450px;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.637);
@@ -288,4 +315,28 @@ button:active{
 
 .card_formulario .btn_envio:active{
     cursor: wait;
+}
+
+#card_sugestao{
+    margin-right: auto;
+}
+
+#card_reclamacao{
+    margin-left: auto;
+}
+
+.card_estrutura{
+    background: white;
+    color: black;
+    width: calc(50% - 10px);
+    height: 180px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.637);
+}
+
+.card_estrutura p{
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
 }
