@@ -12,15 +12,16 @@ body{
 
 .cabecalho{
     text-align: center;
-    border-bottom: 4px solid green;
+    border-bottom: 6px solid #FFBA00;
     padding: 25px 0;
     position: relative;
-    min-height: 120px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    background: #005F27;
 }
 
 .logo_escola{
@@ -37,12 +38,12 @@ body{
 }
 
 .nome_escola{
-    color: green;
+    color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .titulo{
-    color: rgb(75, 177, 75);
+    color: white;
 }
 
 .btn_voltar{
@@ -80,7 +81,7 @@ body{
 
 #titulo_sugestoes_projeto{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-family: 20px;
+    font-size: 20px;
 }
 
 #menu_tipo{
@@ -130,19 +131,20 @@ body{
 
 #cards_votacao{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-    gap: 5%;
+    justify-content: flex-start;
+    gap: 50px;
     max-width: 1200px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 20px 40px 20px;
     box-sizing: border-box;
 }
 
 .card_projeto{
-    background-color: green !important;
-    width: 250px;
-    height: 170px;
+    background: white;
+    width: 100%;
+    min-height: 170px;
     border-radius: 18px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.637);
     flex-shrink: 1;
@@ -151,4 +153,122 @@ body{
 
 .card_projeto:hover{
     transform: scale(1.05);
+}
+
+.bloco_votacao{
+    width: calc(25% - 38px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
+
+.bloco_votacao:hover{
+    transform: scale(1.03);
+}
+
+.bloco_votacao:has(.vazio){
+    pointer-events: none;
+}
+
+.card_estrutura_votacao{
+    position: relative;
+    background: white;
+    width: 100%;
+    min-height: 170px;
+    border-radius: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.637);
+    flex-shrink: 1;
+    transition: 0.3s;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.card_estrutura_votacao:hover{
+    transform: scale(1.05);
+}
+
+.divisor_card_votacao{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 15px 0 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.bloco_voto{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn_voto_opcao{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.btn_voto_opcao[data-tipo="sim"].ativo{
+    border-color: #2ecc71;
+    background-color: #f4fbf7;
+}
+
+.btn_voto_opcao[data-tipo="nao"].ativo{
+    border-color: #e74c3c;
+    background-color: #fdf5f5;
+}
+
+.zona_remover{
+    height: 18px;
+    padding-top: 6px;
+    text-align: center;
+}
+
+.texto_remover_voto{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #ff4a4a;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0;
+}
+
+.texto_remover_voto.oculto{
+    display: none;
+}
+
+.btn_excluir_sugestao{
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn_excluir_sugestao:hover{
+    background-color: #f5f5f5;
+    border-color: #999;
+}
+
+.btn_excluir_sugestao i, .btn_excluir_sugestao svg{
+    font-size: 18px;
+    color: #333;
 }
