@@ -11,7 +11,7 @@
     <header class="cabecalho">
         <img src="IMG/Logo da Escola.jpeg" class="logo_escola">
 
-        <h1 class="nome_escola">EEEP Maria Carmem Vieira Moreira</h1>
+        <h1 class="nome_escola">E.E.E.P. Maria Carmem Vieira Moreira</h1>
 
         <h2 class="titulo">Escola Ativa</h2>
     </header>
@@ -22,17 +22,44 @@
     </a>
 
     <div id="reclamacoes">
-        <h2 id="titulo_reclamacoes">Reclamações</h2>
+        <div class="topo_reclamacoes">
+            <h2 id="titulo_reclamacoes">
+                Reclamações
+            </h2>
 
-        <select id="menu_tipo">
-            <option value="" disabled selected>Menu/Tipo</option>
-            <option>Sugestões de Projeto</option>
-            <option>Sugestões de Melhoria</option>
-            <option>Reclamações</option>
-        </select>
+            <select id="menu_tipo">
+                <option value="" disabled selected>Menu/Tipo</option>
+                <option>Sugestões de Projeto</option>
+                <option>Sugestões de Melhoria</option>
+                <option>Reclamações</option>
+            </select>
+        </div>
+
+
+        <div id="card_reclamacoes">
+            <div id="card_reclamacao">
+                <div class="cabecalho_card_reclamacao">
+                    <h3 id="nome_local">
+                        Local
+                    </h3>
+
+                    <div class="trocar_local">
+                        <button id="btn_subir" class="oculto">
+                            <i class="fa-solid fa-arrow-up"></i>
+                        </button>
+
+                        <button id="btn_descer">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="conteudo_reclamacao">
+                    <div id="lista_reclamacoes"></div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div id="reclamacoes"></div>
 
     <script src="JS/reclamacoes.js"></script>
 </body>
