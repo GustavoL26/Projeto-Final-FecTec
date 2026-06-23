@@ -44,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const texto_remover = (votou_sim || votou_nao) 
                         ? `<p class="texto_remover_voto" data-id="${sug_id}">Remover voto</p>` 
                         : `<p class="texto_remover_voto oculto" data-id="${sug_id}">Remover voto</p>`;
-                    
-                    console.log('Sugestão:', sug.criador_id, sug.tipo_usuario);
 
                     const dono = String(sug.criador_id) === String(usuario_atual_id) && String(sug.tipo_usuario) === String(tipo_usuario_atual);
                     const icone_lixeira = dono 
@@ -119,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
 
                         if (resposta.ok) {
-                            carregar_sugestoesVotacao(); 
+                            await carregar_sugestoesVotacao(); 
                         } else {
                             alert('Não foi possível excluir a sugestão no servidor.');
                         }
@@ -163,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 localStorage.setItem('votos_escola', JSON.stringify(votos_atuais));
-                carregar_sugestoesVotacao();
+                await carregar_sugestoesVotacao();
             }
 
             if (texto_remocao){
